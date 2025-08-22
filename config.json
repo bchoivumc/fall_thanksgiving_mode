@@ -1,0 +1,78 @@
+{
+	"name": "REDCap Fall & Thanksgiving Mode",
+	"namespace": "Vanderbilt\\REDCapFallThanksgivingModeExternalModule",
+	"description": "Brings the warmth and beauty of autumn to REDCap with fall-themed styling, falling leaves animations, and harvest season spirit. Perfect for November data collection!",
+	"documentation": "README.md",
+	"authors": [
+		{
+			"name": "Byungsuk Choi",
+			"email": "byungsuk.choi@vumc.org",
+			"institution": "Vanderbilt University Medical Center"
+		}
+	],
+	"versions": {
+		"1.0.0": "Initial release of REDCap Fall & Thanksgiving Mode."
+	},
+	"enable-every-page-hooks-on-system-pages": true,
+	"framework-version": 15,
+	"project-settings": [
+		{
+			"key": "enable-leaves-animation",
+			"name": "Enable falling leaves animation",
+			"required": false,
+			"type": "checkbox"
+		},
+		{
+			"key": "fall-theme-style",
+			"name": "Fall theme style",
+			"required": false,
+			"type": "dropdown",
+			"choices": [
+				{
+					"value": "classic",
+					"name": "Classic (Standard autumn colors)"
+				},
+				{
+					"value": "pumpkin-spice",
+					"name": "Pumpkin Spice (Warm autumn colors)"
+				}
+			],
+			"default": "classic"
+		},
+		{
+			"key": "fall-theme-intensity",
+			"name": "Fall theme intensity",
+			"required": false,
+			"type": "dropdown",
+			"choices": [
+				{
+					"value": "light",
+					"name": "Light (Subtle autumn feel)"
+				},
+				{
+					"value": "full",
+					"name": "Full (Rich autumn experience)"
+				}
+			],
+			"default": "light"
+		}
+	],
+	"system-settings": [
+		{
+			"key": "enable-fall-mode-global",
+			"name": "Enable Fall & Thanksgiving Mode globally for all REDCap pages",
+			"required": false,
+			"type": "checkbox"
+		},
+		{
+			"key": "allow-user-toggle",
+			"name": "Allow users to toggle Fall mode on/off",
+			"required": false,
+			"type": "checkbox"
+		}
+	],
+	"compatibility": {
+		"php-version-min": "5.6.0",
+		"redcap-version-min": "8.0.0"
+	}
+}
