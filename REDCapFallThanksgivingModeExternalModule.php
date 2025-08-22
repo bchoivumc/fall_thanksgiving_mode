@@ -51,7 +51,14 @@ class REDCapFallThanksgivingModeExternalModule extends AbstractExternalModule
             $hasIntensity = $this->getProjectSetting('fall-theme-intensity', $project_id);
             
             // If any setting is configured, enable the mode
-            return $hasLeaves || $hasStyle || $hasIntensity;
+            // Also enable by default when module is first used (no settings configured yet)
+            if ($hasLeaves || $hasStyle || $hasIntensity) {
+                return true;
+            }
+            
+            // Enable by default with full Thanksgiving theme when no settings are configured
+            // This ensures the module shows the full experience when first enabled
+            return true;
         }
         
         return false;
@@ -59,9 +66,9 @@ class REDCapFallThanksgivingModeExternalModule extends AbstractExternalModule
 
     private function addFallAssets($project_id = null)
     {
-        // Get intensity from project settings first, then system settings, default to moderate
+        // Get intensity from project settings first, then system settings, default to full
         $intensity = $this->getProjectSetting('fall-theme-intensity', $project_id) ?: 
-                    $this->getSystemSetting('fall-theme-intensity') ?: 'moderate';
+                    $this->getSystemSetting('fall-theme-intensity') ?: 'full';
         
         $enableLeaves = $this->getProjectSetting('enable-leaves-animation', $project_id) ?? true;
         $themeStyle = $this->getProjectSetting('fall-theme-style', $project_id) ?: 'classic';
