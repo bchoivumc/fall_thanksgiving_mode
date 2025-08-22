@@ -13,7 +13,7 @@
 	"versions": {
 		"1.0.0": "Initial release of REDCap Fall & Thanksgiving Mode."
 	},
-	"enable-every-page-hooks-on-system-pages": true,
+	"enable-every-page-hooks-on-system-pages": false,
 	"framework-version": 15,
 	"project-settings": [
 		{
