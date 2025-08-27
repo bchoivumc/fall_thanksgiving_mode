@@ -452,8 +452,8 @@ class REDCapFallThanksgivingModeExternalModule extends AbstractExternalModule
                 if (!logo.dataset.originalSrc) {
                     logo.dataset.originalSrc = logo.src;
                 }
-                const modulePath = "/redcap1532/modules/fall_thanksgiving_mode_v1.0.0/";
-                logo.src = modulePath + "leaf_covered_redcap_logo_final_v5.png";
+                const moduleImageUrl = "' . $this->getUrl('leaf_covered_redcap_logo_final_v5.png') . '";
+                logo.src = moduleImageUrl;
             });
         }
         
